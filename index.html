@@ -49,22 +49,21 @@
 </head>
 <body>
     <div class="input-ctr">
-        <label for="input" id="label">9849******</label>
+        <label for="input" id="label">9441*****</label>
         <input type="text" id="input" maxlength="10"/>
     </div>
     <script type="text/javascript">
         let input = document.getElementById("input");
         let label = document.getElementById("label");
-        typedTextEl.classList.add('typed-text');
-        input.addEventListener('input',function(){
+        input.oninput = function(){
             let length = input.value.length;
             if(length > 0){
-                label.style.display = 'none';
+                label.style.display = "none";
             }
             else{
-                label.style.display = 'block';
+                label.style.display = "block";
             }
-        })
+        }
     </script>
 </body>
 </html>
