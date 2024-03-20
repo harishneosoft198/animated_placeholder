@@ -30,8 +30,9 @@
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+    typing 1.5s steps(40, end);
+    animation-iteration-count: infinite;
+  animation-direction: alternate; 
 }
 
 /* The typing effect */
@@ -40,11 +41,6 @@
   to { width: 100% }
 }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
     </style>
 </head>
 <body>
