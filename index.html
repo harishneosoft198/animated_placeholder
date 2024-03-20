@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated placeholder</title>
+    <style>
+        .input-ctr{
+            position: relative;
+        }
+        .input-ctr input{
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #fff;
+            font-size: 16px;
+            padding-left: 5px;
+        }
+        .input-ctr label{
+            position: absolute;
+            left: 5px;
+            top: 0;
+            z-index: 1;
+            font-size: 16px;
+            color: grey;
+        }
+        .typed-text{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-ctr">
+        <label for="input" id="label">9849******</label>
+        <input type="text" id="input" maxlength="10"/>
+    </div>
+    <script type="text/javascript">
+        let input = document.getElementById("input");
+        let label = document.getElementById("label");
+        let labelText = '9849******';
+        let typedTextEl = document.createElement('span');
+        let nonTypedTextEl = document.createElement('span');
+        typedTextEl.classList.add('typed-text');
+        input.addEventListener('input',function(){
+            let length = input.value.length;
+            if(length > 0){
+                typedTextEl.textContent = input.value;
+                nonTypedTextEl.textContent = labelText.substring(length,labelText.length);
+                label.innerHTML = '';
+                label.appendChild(typedTextEl);
+                label.appendChild(nonTypedTextEl);
+            }
+            else{
+                label.innerHTML = '9849******';
+            }
+        })
+    </script>
+</body>
+</html>
